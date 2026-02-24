@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: 여기에_GitHub아이디/galaxias  # ← 본인 GitHub 아이디로 바꾸세요
+  repo: xpert757575/galaxias  # ← 본인 GitHub 아이디로 바꾸세요
   branch: main
 
 media_folder: "images"
