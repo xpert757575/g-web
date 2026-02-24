@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: 여기에_GitHub아이디/galaxias  # ← 본인 GitHub 아이디로 바꾸세요
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "books"
+    label: "📚 책 목록"
+    folder: "_data/books"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "책 제목", name: "title", widget: "string" }
+      - { label: "저자", name: "author", widget: "string" }
+      - { label: "그림 작가 (없으면 비워두세요)", name: "illustrator", widget: "string", required: false }
+      - { label: "출간연도", name: "year", widget: "string" }
+      - { label: "책 표지 이미지", name: "image", widget: "image", required: false }
+      - { label: "책 소개", name: "desc", widget: "text" }
+      - { label: "쇼핑몰 링크 (없으면 비워두세요)", name: "shopUrl", widget: "string", required: false }
+
+  - name: "blog"
+    label: "✍️ 블로그"
+    folder: "_data/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "제목", name: "title", widget: "string" }
+      - { label: "날짜", name: "date", widget: "datetime", format: "YYYY. MM. DD" }
+      - { label: "미리보기 글", name: "excerpt", widget: "text" }
+      - { label: "본문", name: "body", widget: "markdown" }
+
+  - name: "authors"
+    label: "👤 저자 소개"
+    folder: "_data/authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "이름", name: "name", widget: "string" }
+      - { label: "관련 도서", name: "book", widget: "string" }
+      - { label: "소개", name: "bio", widget: "text" }
