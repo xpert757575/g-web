@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: xpert757575/galaxias
+  name: git-gateway
   branch: main
 
 media_folder: "images"
